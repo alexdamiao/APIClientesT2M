@@ -1,7 +1,6 @@
 ﻿using Clientes.Api.Contracts;
 using Clientes.Api.Data;
 using Clientes.Api.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,6 +1,4 @@
 ﻿using Clientes.Api.Models;
-using Clientes.Api.Shared.Attributes;
-using System.ComponentModel.DataAnnotations;
 
 namespace Clientes.Api.Contracts;
 
