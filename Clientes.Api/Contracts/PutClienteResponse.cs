@@ -9,6 +9,12 @@ public class PutClienteResponse
     public DateTime Nascimento { get; set; }
     public string Cpf { get; set; }
     public string Endereco { get; set; }
+    public string Numero { get; set; }
+    public string Complemento { get; set; }
+    public string Bairro { get; set; }
+    public string Cidade { get; set; }
+    public string Uf { get; set; }
+    public int Cep { get; set; }
 
     public static PutClienteResponse From(Cliente entity)
     {
@@ -18,7 +24,13 @@ public class PutClienteResponse
             Nome = entity.Nome,
             Nascimento = entity.Nascimento,
             Cpf = entity.Cpf,
-            Endereco = entity.Endereco
+            Endereco = entity.Endereco,
+            Numero = entity.Numero,
+            Cep = entity.Cep,
+            Uf = entity.Uf,
+            Cidade = entity.Cidade,
+            Bairro = entity.Bairro,
+            Complemento = entity.Complemento
         };
     }
 }

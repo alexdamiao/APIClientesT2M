@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Clientes.Tests.Contracts;
 
 [TestFixture]
-public class CreateClienteRequestTests
+public class PutClienteRequestTests
 {
     [Test]
     public void NomeIsRequired()

@@ -42,5 +42,6 @@ public class CreateClienteRequest
     public string Uf { get; set; }
 
     [Required]
+    [Cep]
     public int Cep { get; set; }
 }
