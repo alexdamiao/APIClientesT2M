@@ -4,10 +4,10 @@ using System.ComponentModel.DataAnnotations;
 namespace Clientes.Tests.Contracts;
 
 [TestFixture]
-public class CreateClienteRequestTests
+public class CreateClienteRequestTest
 {
     [Test]
-    public void NomeIsRequired()
+    public void NomeEhObrigatorio()
     {
         var request = new CreateClienteRequest
         {
@@ -32,7 +32,7 @@ public class CreateClienteRequestTests
     }
 
     [Test]
-    public void NomeCannotExceedMaxLength()
+    public void NomeNaoEhMaiorQueTamanhoMaximo()
     {
         var request = new CreateClienteRequest
         {
@@ -57,7 +57,7 @@ public class CreateClienteRequestTests
     }
 
     [Test]
-    public void NascimentoIsRequired()
+    public void NascimentoEhObrigatorio()
     {
         var request = new CreateClienteRequest
         {
@@ -82,7 +82,7 @@ public class CreateClienteRequestTests
     }
 
     [Test]
-    public void CpfIsRequired()
+    public void CpfEhObrigatorio()
     {
         var request = new CreateClienteRequest
         {
@@ -107,7 +107,7 @@ public class CreateClienteRequestTests
     }
 
     [Test]
-    public void CpfMustBeValid()
+    public void CpfEhValido()
     {
         var request = new CreateClienteRequest
         {
@@ -132,7 +132,7 @@ public class CreateClienteRequestTests
     }
 
     [Test]
-    public void EnderecoIsRequired()
+    public void EnderecoEhObrigatorio()
     {
         var request = new CreateClienteRequest
         {
@@ -157,7 +157,7 @@ public class CreateClienteRequestTests
     }
 
     [Test]
-    public void NumeroIsRequired()
+    public void NumeroEhObrigatorio()
     {
         var request = new CreateClienteRequest
         {
@@ -182,7 +182,7 @@ public class CreateClienteRequestTests
     }
 
     [Test]
-    public void BairroIsRequired()
+    public void BairroEhObrigatorio()
     {
         var request = new CreateClienteRequest
         {
@@ -207,7 +207,7 @@ public class CreateClienteRequestTests
     }
 
     [Test]
-    public void CidadeIsRequired()
+    public void CidadeEhObrigatorio()
     {
         var request = new CreateClienteRequest
         {
@@ -232,7 +232,7 @@ public class CreateClienteRequestTests
     }
 
     [Test]
-    public void UfIsRequired()
+    public void UfEhObrigatorio()
     {
         var request = new CreateClienteRequest
         {
@@ -257,7 +257,7 @@ public class CreateClienteRequestTests
     }
 
     [Test]
-    public void CepIsRequired()
+    public void CepEhObrigatorio()
     {
         var request = new CreateClienteRequest
         {
@@ -282,7 +282,7 @@ public class CreateClienteRequestTests
     }
 
     [Test]
-    public void UfCannotExceedMaxLength()
+    public void UfNaoEhMaiorQueTamanhoMaximo()
     {
         var request = new CreateClienteRequest
         {
@@ -307,7 +307,7 @@ public class CreateClienteRequestTests
     }
 
     [Test]
-    public void ValidRequestPassesValidation()
+    public void ValidarUmaRequisicaoCompleta()
     {
         var request = new CreateClienteRequest
         {
