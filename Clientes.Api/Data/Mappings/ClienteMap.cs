@@ -13,5 +13,11 @@ public class ClienteMap : IEntityTypeConfiguration<Cliente>
         builder.Property(p => p.Nascimento).IsRequired();
         builder.Property(p => p.Cpf).HasMaxLength(11).IsRequired();
         builder.Property(p => p.Endereco).HasMaxLength(100).IsRequired();
+        builder.Property(p => p.Numero).HasMaxLength(10).IsRequired();
+        builder.Property(p => p.Complemento).HasMaxLength(100);
+        builder.Property(p => p.Bairro).HasMaxLength(100).IsRequired();
+        builder.Property(p => p.Cidade).HasMaxLength(100).IsRequired();
+        builder.Property(p => p.Uf).HasMaxLength(2).IsRequired();
+        builder.Property(p => p.Cep).IsRequired();
     }
 }
