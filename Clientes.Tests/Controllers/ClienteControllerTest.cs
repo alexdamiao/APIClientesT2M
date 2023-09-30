@@ -5,7 +5,7 @@ using Clientes.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Clientes.Tests.Contracts;
+namespace Clientes.Tests.Controllers;
 
 [TestFixture]
 public class ClienteControllerTests
@@ -242,6 +242,7 @@ public class ClienteControllerTests
     {
         var request = new PutClienteRequest();
 
+        _controller.ModelState.AddModelError("Nome", "The Nome field is required.");
         var response = await _controller.Put(request) as BadRequestObjectResult;
         Assert.IsNotNull(response);
         Assert.AreEqual(400, response.StatusCode);
