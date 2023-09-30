@@ -82,6 +82,31 @@ public class PutClienteRequestTest
     }
 
     [Test]
+    public void NascimentoNaoEhValido()
+    {
+        var request = new PutClienteRequest
+        {
+            Nome = "Nome Teste",
+            Nascimento = DateTime.MinValue,
+            Cpf = "47833146080",
+            Endereco = "Rua Teste 123",
+            Numero = "123",
+            Bairro = "Centro",
+            Cidade = "Rio de Janeiro",
+            Uf = "RJ",
+            Cep = 12345678
+        };
+
+        var context = new ValidationContext(request, null, null);
+        var results = new List<ValidationResult>();
+        var isValid = Validator.TryValidateObject(request, context, results, true);
+
+        Assert.IsFalse(isValid);
+        Assert.AreEqual(1, results.Count);
+        Assert.AreEqual("Nascimento está inválido.", results[0].ErrorMessage);
+    }
+
+    [Test]
     public void CpfEhObrigatorio()
     {
         var request = new PutClienteRequest
