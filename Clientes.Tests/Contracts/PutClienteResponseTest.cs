@@ -24,7 +24,7 @@ public class PutClienteResponseTests
             Cep = 12345678
         };
 
-        var response = GetClienteResponse.From(cliente);
+        var response = PutClienteResponse.From(cliente);
 
         Assert.AreEqual(cliente.Id, response.Id);
         Assert.AreEqual(cliente.Nome, response.Nome);

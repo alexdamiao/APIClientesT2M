@@ -9,7 +9,7 @@ public class PutClienteRequestTest
     [Test]
     public void NomeEhObrigatorio()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             // Nome não é definido, o que deveria falhar na validação.
             Nascimento = DateTime.Now,
@@ -34,7 +34,7 @@ public class PutClienteRequestTest
     [Test]
     public void NomeNaoEhMaiorQueTamanhoMaximo()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             Nome = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ",
             Nascimento = DateTime.Now,
@@ -59,7 +59,7 @@ public class PutClienteRequestTest
     [Test]
     public void NascimentoEhObrigatorio()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             Nome = "Nome Teste",
             // Nascimento não é definido, o que deveria falhar na validação.
@@ -84,7 +84,7 @@ public class PutClienteRequestTest
     [Test]
     public void CpfEhObrigatorio()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             Nome = "Nome Teste",
             Nascimento = DateTime.Now,
@@ -109,7 +109,7 @@ public class PutClienteRequestTest
     [Test]
     public void CpfEhValido()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             Nome = "Nome Teste",
             Nascimento = DateTime.Now,
@@ -134,7 +134,7 @@ public class PutClienteRequestTest
     [Test]
     public void EnderecoEhObrigatorio()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             Nome = "Nome Teste",
             Nascimento = DateTime.Now,
@@ -159,7 +159,7 @@ public class PutClienteRequestTest
     [Test]
     public void NumeroEhObrigatorio()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             Nome = "Nome Teste",
             Nascimento = DateTime.Now,
@@ -184,7 +184,7 @@ public class PutClienteRequestTest
     [Test]
     public void BairroEhObrigatorio()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             Nome = "Nome Teste",
             Nascimento = DateTime.Now,
@@ -209,7 +209,7 @@ public class PutClienteRequestTest
     [Test]
     public void CidadeEhObrigatorio()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             Nome = "Nome Teste",
             Nascimento = DateTime.Now,
@@ -234,7 +234,7 @@ public class PutClienteRequestTest
     [Test]
     public void UfEhObrigatorio()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             Nome = "Nome Teste",
             Nascimento = DateTime.Now,
@@ -259,7 +259,7 @@ public class PutClienteRequestTest
     [Test]
     public void CepEhObrigatorio()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             Nome = "Nome Teste",
             Nascimento = DateTime.Now,
@@ -284,7 +284,7 @@ public class PutClienteRequestTest
     [Test]
     public void UfNaoEhMaiorQueTamanhoMaximo()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             Nome = "Nome Teste",
             Nascimento = DateTime.Now,
@@ -309,7 +309,7 @@ public class PutClienteRequestTest
     [Test]
     public void ValidarUmaRequisicaoCompleta()
     {
-        var request = new CreateClienteRequest
+        var request = new PutClienteRequest
         {
             Nome = "Nome Teste",
             Nascimento = DateTime.Now,
