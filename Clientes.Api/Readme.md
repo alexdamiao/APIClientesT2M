@@ -15,55 +15,26 @@ Para a API funcionar, é necessário possuir uma versão do SQL Server, para reg
 
 ## 🚀 Iniciando o projeto
 
-To run minikube use this command:
+Para que o projeto funcione, é necessário executar o Migrations no Visual Studio, para que o banco seja criado.
+
+Com o botão direito no projeto Clientes.API, vá em "Abrir no Terminal" e digite o comando abaixo:
 
 ```
-minikube start --driver=docker
+dotnet ef database update
 ```
 
-Then we need to set up the dashboard (for this command you need to keep the terminal open):
+Feito isso, o banco estará criado e o projeto poderá ser executado
 
-```
-minikube dashboard
-```
+## ☕ Executando o projeto
 
-Then we need to build our docker image:
+O projeto irá disponibilizar cinco endpoints:
 
-```
-docker image build -t french-amortization-api -f French.Amortization.Api/Dockerfile .
-```
-
-Then we need to load our local image onto minikube.
-
-```
-minikube image load french-amortization-api
-```
-
-Then we need to deploy our app to kubernetes:
-```
-kubectl apply -f kubernetes/deployment.yml
-kubectl apply -f kubernetes/service.yml
-kubectl apply -f kubernetes/hpa.yml
-```
-
-## ☕ Using our app
-
-We must create a tunnel between minikube and the kubernetes container running on our docker desktop app:
-
-```
-minikube service french-amortization-api-service
-```
+* Post: Incluindo dados de cliente na base de dados;
+* Get: Primeiro Get retornará todos os registros da tabela;
+* Put: Alteração dos dados do cliente na base de dados;
+* Get: Segundo Get, passando o Id, retorna os dados de um cliente;
+* Delete: Exclui um registro do banco de dados.
 
 
-## 📄 Useful notes
-
-To test HPA here's a useful loader:
-
-```
-kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://<INTERAL POD IP HERE>/swagger/index.html; done"
-```
-
-To see metrics, run this command: 
-```
-minikube addons enable metrics-server
-```
+*Alex Damião </br>
+Analista de Sistemas Sênior*
